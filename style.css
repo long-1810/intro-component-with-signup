@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+  --white: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  color: var(--white);
+}
+
+.text__title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.text__desc {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form__notif {
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--blue);
+  border-radius: 0.5rem;
+}
+
+.form__notif--bold {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+form {
+  font-family: "Poppins", sans-serif;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.input-block {
+  position: relative;
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  outline: none;
+  border: 0.1rem solid var(--grayish-blue);
+  width: 100%;
+}
+
+input:focus {
+  outline: 0.1rem solid var(--dark-blue);
+}
+
+form .error-icon {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  text-align: center;
+  right: 1.25rem;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+  background-color: var(--green);
+  padding: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 400;
+}
+
+.form__text {
+  font-size: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+  color: var(--grayish-blue);
+}
+
+.form__text--bold {
+  color: var(--red);
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    background: url("./images/bg-intro-mobile.png");
+    background-color: var(--red);
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 90%;
+  }
+  form {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .text__title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .text__desc {
+    text-align: center;
+  }
+  .form__notif {
+    padding: 1rem;
+  }
+  button {
+    padding: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    background: url("./images/bg-intro-mobile.png");
+    background-color: var(--red);
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .text__title {
+    font-size: 2rem;
+    max-width: 30rem;
+    text-align: center;
+  }
+  .text__desc {
+    max-width: 30rem;
+    text-align: center;
+  }
+  .form__notif {
+    padding: 1rem;
+  }
+  .input-block {
+    max-width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  body {
+    background: url("./images/bg-intro-desktop.png");
+    background-color: var(--red);
+  }
+  .container {
+    gap: 3rem;
+    max-width: 85%;
+  }
+  .text__title {
+    max-width: 20rem;
+  }
+  .text__desc {
+    max-width: 20rem;
+  }
+  .form__notif {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    background: url("./images/bg-intro-desktop.png");
+    background-color: var(--red);
+  }
+  .container {
+    gap: 5rem;
+    max-width: 70%;
+  }
+  .text__title {
+    max-width: 30rem;
+  }
+  .text__desc {
+    max-width: 30rem;
+  }
+  .form__notif {
+    padding: 1rem 3rem;
+  }
+  .input-block {
+    max-width: 30rem;
+  }
+}
+
+form.error-form {
+  gap: 2.5rem;
+}
+
+.error-field input {
+  border: .1rem solid var(--red);
+}
+
+.error-field input:focus {
+  outline: .1rem solid var(--red);
+}
+
+.error-field input::placeholder {
+  color: var(--red);
+}
+
+.input-block.error-field::after {
+  font-size: .75rem;
+  position: absolute;
+  bottom: -60%;
+  right: 0;
+  color: var(--red);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.fname.error-field::after {
+  content: 'First Name cannot be empty';
+}
+
+.lname.error-field::after {
+  content: 'Last Name cannot be empty';
+}
+
+.email.error-field::after {
+  content: 'Looks like this is not an email';
+}
+
+.password.error-field::after {
+  content: 'Password cannot be empty';
+}
+
+.error-icon {
+  display: none;
+}
+
+.error-field .error-icon {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
